@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorwHITE"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_accountinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/john"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="7dp"
+        android:text="Account Info" />
+
+    <Button
+        android:id="@+id/ntm_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/john"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="7dp"
+
+        android:text="About" />
+
+    <Button
+        android:id="@+id/btn_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/john"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="7dp"
+        android:text="Contact Us" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:background="@color/colorwHITE"
+        android:gravity="bottom|center"
+        android:text="B4 Bunk\n
+Version : 1.01\n
+By Akash Madhu\n" />
+
+
+</LinearLayout>

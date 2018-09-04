@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:textAllCaps="false"
+    tools:context=".about_us">
+
+
+    <Button
+        android:id="@+id/btn_Version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/john"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="7dp"
+        android:text="Version"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/website"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/john"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="7dp"
+        android:text="website Us"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/more_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/john"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="7dp"
+        android:text="About"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/john"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="7dp"
+        android:text="Contact Us"
+        android:textAllCaps="false" />
+
+
+</LinearLayout>

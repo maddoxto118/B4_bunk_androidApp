@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/aad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="72dp"
+        android:hint="Toto" />
+
+    <TextView
+        android:id="@+id/percentage1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="84dp"
+        android:gravity="center_horizontal"
+        android:hint="o-o"
+        android:textColor="@color/Love"
+        android:textColorHint="@color/Love"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/abss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/percentage1"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Enter Bunk'd Days"
+        android:inputType="number"
+        android:textColor="@color/neil_patel" />
+
+
+    <Button
+        android:id="@+id/plusTwo"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/sp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/neil_patel"
+        android:text="+1"
+        android:visibility="invisible" />
+
+    <Spinner
+        android:id="@+id/sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="127dp"
+        android:visibility="invisible" />
+
+    <br.com.bloder.magic.view.MagicButton
+        android:id="@+id/magic_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="172dp"
+        app:button_icon="@drawable/icon_new_1"
+        app:button_icon_height="60dp"
+        app:button_icon_width="55dp"
+        app:expandable_area_color="@color/neil_patel"
+        app:hide_text="Ready To Bunk! "
+        app:hide_text_color="@color/colorwHITE"
+        app:hide_text_size="6dp"
+        app:icon_button_color="#d74e26"
+        app:magic_button_size="85dp" />
+
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="1dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
+
+
+</RelativeLayout>

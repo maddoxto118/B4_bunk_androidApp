@@ -1,0 +1,109 @@
+package com.b4_downstairs.akash_madhu.navigationdrawe1;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DecimalFormat;
+
+public class acountinfo_female extends AppCompatActivity {
+
+
+    DecimalFormat formatterDays, formaterPerc;
+    TextView feeemale, ftoastt, dialog;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_acountinfo_female);
+
+        feeemale = findViewById(R.id.ffname);
+        formaterPerc = new DecimalFormat("#0.0");
+
+        ftoastt = findViewById(R.id.fftoast);
+        dialog = findViewById(R.id.dialog);
+
+        String jack = readcontactPer();
+        float perkk = Float.parseFloat(jack);
+
+
+        if (perkk > 95) {
+            dialog.setText("High Roller!");
+        } else if (perkk > 90) {
+            dialog.setText("Keep Going Gal!");
+        } else if (perkk > 80) {
+            dialog.setText("ohh Gal! Average Bunk'er");
+        } else if (perkk < 80) {
+            dialog.setText("Bunker's HOME!");
+        }
+
+        ftoastt.setText(formaterPerc.format(perkk) + "%");
+
+        getFEMaleName();
+
+
+    }
+
+
+    public void getFEMaleName() {
+
+        try {
+            String Message;
+            FileInputStream fileInputStream = openFileInput("name_female");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            StringBuffer stringBuffer = new StringBuffer();
+
+            while ((Message = bufferedReader.readLine()) != null) {
+                stringBuffer.append(Message + "\n");
+            }
+            //SET TEXT TO DISPLAY
+            feeemale.setText(stringBuffer.toString());
+
+
+            //              daysLeft = Integer.parseInt(stringBuffer.toString());
+            //      tvleave.setVisibility(View.VISIBLE);
+            //       firstDays=stringBuffer.toString().trim();
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public String readcontactPer() {
+        ContactDBHelper contactDBHelper = new ContactDBHelper(this);
+        SQLiteDatabase database = contactDBHelper.getReadableDatabase();
+
+        Cursor cursor = contactDBHelper.readCOntact(database);
+        String info = "";
+        String a = ";";
+        String b = "";
+        String c = "";
+
+        while (cursor.moveToNext()) {
+            String Id = Integer.toString(cursor.getInt(cursor.getColumnIndex(ContactContract.ContactEntry.CONTACT_ID)));
+            a = cursor.getString(cursor.getColumnIndex(ContactContract.ContactEntry.NAME));
+            b = cursor.getString(cursor.getColumnIndex(ContactContract.ContactEntry.EMAIL));
+            c = cursor.getString(cursor.getColumnIndex(ContactContract.ContactEntry.PERCENT));
+            info = info + "\n\n" + "Id   : " + Id + "\nName : " + a + "\nEmail: " + b + "\nPer   " + c + "\n";
+        }
+
+
+        contactDBHelper.close();
+
+        return c;
+    }
+
+
+}
